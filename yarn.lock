@@ -1359,6 +1359,13 @@
   resolved "https://registry.yarnpkg.com/@soda/get-current-script/-/get-current-script-1.0.2.tgz#a53515db25d8038374381b73af20bb4f2e508d87"
   integrity sha512-T7VNNlYVM1SgQ+VsMYhnDkcGmWhQdL0bDyGm5TlQ3GBXnJscEClUUOKduWTmm2zCnvNLC1hc3JpuXjs/nFOc5w==
 
+"@types/bn.js@*":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@types/bn.js/-/bn.js-5.1.0.tgz#32c5d271503a12653c62cf4d2b45e6eab8cebc68"
+  integrity sha512-QSSVYj7pYFN49kW77o2s9xTCwZ8F2xLbjLLSEVh8D2F4JUhZtPAGOFLTD+ffqksBx/u4cE/KImFjyhqCjn/LIA==
+  dependencies:
+    "@types/node" "*"
+
 "@types/body-parser@*":
   version "1.19.2"
   resolved "https://registry.yarnpkg.com/@types/body-parser/-/body-parser-1.19.2.tgz#aea2059e28b7658639081347ac4fab3de166e6f0"
@@ -1381,6 +1388,13 @@
   integrity sha512-cdeYyv4KWoEgpBISTxWvqYsVy444DOqehiF3fM3ne10AmJ62RSyNkUnxMJXHQWRQQX2eR94m5y1IZyDwBjV9FQ==
   dependencies:
     "@types/node" "*"
+
+"@types/elliptic@^6.4.12":
+  version "6.4.14"
+  resolved "https://registry.yarnpkg.com/@types/elliptic/-/elliptic-6.4.14.tgz#7bbaad60567a588c1f08b10893453e6b9b4de48e"
+  integrity sha512-z4OBcDAU0GVwDTuwJzQCiL6188QvZMkvoERgcVjq0/mPM8jCfdwZ3x5zQEVoL9WCAru3aG5wl3Z5Ww5wBWn7ZQ==
+  dependencies:
+    "@types/bn.js" "*"
 
 "@types/express-serve-static-core@*", "@types/express-serve-static-core@^4.17.18":
   version "4.17.28"
@@ -1943,6 +1957,14 @@
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@wert-io/widget-initializer/-/widget-initializer-0.3.0.tgz#b82eea465a452be820990fda281e4277b58c79b0"
   integrity sha512-gtWchtskGEsYxszFngxubdKnnEtZwN9frC7pM+Nk79UGOZggqUfV09RLOiTWvGUVIcdhGbghmaG9oDfTbtwjiA==
+
+"@wert-io/widget-sc-signer@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@wert-io/widget-sc-signer/-/widget-sc-signer-0.0.2.tgz#9848706feae1ec621fbe1da9d868342cded4cfdb"
+  integrity sha512-1UuED0G7RG/7NjtUk7EqhoYql4bfjJ0ceBTvr/iT7V3YjInEBNLNaPyUEdVHoHsQwWYLukPaltP0J6X7VF0pQQ==
+  dependencies:
+    "@types/elliptic" "^6.4.12"
+    elliptic "^6.5.4"
 
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
