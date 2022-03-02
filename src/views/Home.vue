@@ -16,7 +16,7 @@ export default {
     // Customize your input data matching your contract
     const data = {
       address: process.env.VUE_APP_RECEIVER_ADDRESS,
-      commodity: "ETH:rinkeby",
+      commodity: "ETH",
       commodity_amount: process.env.VUE_APP_PURCHASE_AMOUNT,
       pk_id: "key1",
       sc_address: process.env.VUE_APP_SMARTCONTRACT_ADDRESS,
@@ -29,9 +29,10 @@ export default {
       container_id: "wert-wrapper",
       partner_id: process.env.VUE_APP_WERT_PARTNER_ID,
       address: data.address,
-      commodity: data.commodity,
+      commodity: "ETH:rinkeby", // Specify here if rinkeby or ropsten
       height: window.innerHeight,
       origin: "https://sandbox.wert.io",
+      pk_id: data.pk_id,
       commodity_amount: data.commodity_amount,
       sc_id: Buffer(identifier).toString("hex"),
       sc_address: data.sc_address,
