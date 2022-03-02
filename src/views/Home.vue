@@ -7,15 +7,13 @@
 <script>
 import WertWidget from "@wert-io/widget-initializer";
 import { uuid } from "uuidv4";
-import { ethers } from "ethers";
 const EdDSA = require("elliptic").eddsa;
 
 export default {
   name: "Home",
   mounted() {
     const identifier = uuid();
-    const coder = new ethers.utils.AbiCoder();
-    const inputData = coder.encode(["bytes32[]"], [[]]);
+    // Customize your input data matching your contract
     const ellipticEdDSA = new EdDSA("ed25519");
     const ellipticKey = ellipticEdDSA.keyFromSecret(process.env.VUE_APP_PRIVATE_KEY);
     const data = {
@@ -25,7 +23,7 @@ export default {
       pk_id: "key1",
       sc_address: process.env.VUE_APP_SMARTCONTRACT_ADDRESS,
       sc_id: Buffer(identifier).toString("hex"),
-      sc_input_data: inputData,
+      sc_input_data: "0xcef220a300000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000000",
     };
 
     const dataString = Object.keys(data)
