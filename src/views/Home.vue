@@ -1,16 +1,22 @@
 <template>
   <div class="home">
-    <h1>Buy an NFT with WERT.IO</h1>
-    <p>Your're minting "nothing" at <b>0xf81046bafce92bdac543f2a91fa91c16ba40abde</b> on Rinkeby.</p><br>
-    <div v-if="!account">
-      First connect your wallet, we need to be sure you own your wallet to receive the NFT.<br><br>
+    <h2>
+      Buy an NFT with <a href="https://wert.io" target="_blank">WERT.IO</a>
+    </h2>
+    <div v-if="!account" style="padding: 30vh 0">
+      First connect your wallet,<br />we need it to be sure you own the
+      address<br />where you'll receive the NFT.<br /><br />
       <button @click="connect">CONNECT YOUR WALLET FIRST</button>
     </div>
     <div v-if="account">
-      First add a fake mobile number, then use code <b>0000</b> to verify it.<br>
-      Then use fake credit card number: <b>4007410000000006</b> to complete purchase.
+      Add a fake mobile number, then use code <b>0000</b> to verify it.<br />
+      Use fake credit card number: <b>4007410000000006</b> to complete
+      purchase.
     </div>
+    <hr v-show="account" />
     <div v-show="account" id="wert-wrapper"></div>
+    <hr style="margin-top: 20px" />
+    Made with love at <a href="https://yomi.digital" target="_blank">YOMI</a>
   </div>
 </template>
 
@@ -19,7 +25,7 @@ import Web3 from "web3";
 import Web3Modal from "web3modal";
 import WalletConnectProvider from "@walletconnect/web3-provider";
 import WertWidget from "@wert-io/widget-initializer";
-import { uuid } from "uuidv4";
+import { v4 } from "uuid";
 const { signSmartContractData } = require("@wert-io/widget-sc-signer");
 
 export default {
@@ -58,12 +64,12 @@ export default {
       if (accounts.length > 0) {
         app.balance = await app.web3.eth.getBalance(accounts[0]);
         app.account = accounts[0];
-        app.mountWert()
+        app.mountWert();
       }
     },
     async mountWert() {
       const app = this;
-      const identifier = uuid();
+      const identifier = v4();
       // Customize your input data matching your contract
       const data = {
         address: app.account,
